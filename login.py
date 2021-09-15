@@ -8,7 +8,7 @@ app.secret_key = 'secret-key'
 DB_HOST = "localhost"
 DB_NAME = "postgres"
 DB_USER = "postgres"
-DB_PASS = "london2000"
+DB_PASS = ""
 
 conn = psycopg2.connect(dbname=DB_NAME, user=DB_USER, password=DB_PASS, host=DB_HOST)
 
@@ -26,7 +26,7 @@ def forgot():
 @app.route("/create", methods=['GET', 'POST'])
 def create():
     cursor = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
-    # check 
+    # check
     return render_template("create.html")
 
 
